@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    let div = Division.examples[0]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Form {
+            VStack(alignment: .leading) {
+                Text("Division \(div.code)")
+                Text("Size: \(div.students.count)")
+            }
         }
-        .padding()
     }
 }
 

@@ -10,9 +10,9 @@ import Foundation
 class Student {
     let forename: String
     let surname: String
-    let birthday: Date
+    let birthday: Int
     
-    init(forename: String, surname: String, birthday: Date) {
+    init(forename: String, surname: String, birthday: Int) {
         self.forename = forename
         self.surname = surname
         self.birthday = birthday
