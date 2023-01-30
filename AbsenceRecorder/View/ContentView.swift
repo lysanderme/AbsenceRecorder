@@ -8,19 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    let div = Division.examples[0]
+    var divisions: [Division]
+    @State private var currentDate: Date = Date()
+    
     var body: some View {
-        Form {
-            VStack(alignment: .leading) {
-                Text("Division \(div.code)")
-                Text("Size: \(div.students.count)")
+        NavigationView {
+            List(divisions, id: \.self.code) { division in
+                DivisionItem(division: division)
+            }
+            .navigationTitle(currentDate.getShortDate())
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: { currentDate = currentDate.previousDay() }) {
+                        Image(systemName: "arrowtriangle.left.circle")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: { currentDate = currentDate.nextDay() }) {
+                        Image(systemName: "arrowtriangle.right.circle")
+                    }
+                }
             }
         }
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(divisions: Division.examples)
     }
 }
