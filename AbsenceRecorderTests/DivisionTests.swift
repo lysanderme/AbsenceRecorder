@@ -42,10 +42,11 @@ final class DivisionTests: XCTestCase {
         division.absences.append(absence)
             
         //act
-        division.createAbsenceOrGetExistingIfAvailable(for: dateLaterToday)
+        let second = division.createAbsenceOrGetExistingIfAvailable(for: dateLaterToday)
         
         //assert
         XCTAssertEqual(1, division.absences.count)
+        XCTAssertEqual(absence.takenOn, second.takenOn)
     }
     
 }
