@@ -9,22 +9,15 @@ import Foundation
 
 class StateController: ObservableObject {
     @Published var divisions: [Division] = []
-    private var url: URL
     
     init() {
         loadFromFile()
     }
     
-    func getPath(file: String) -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let userPath = paths[0]
-        let url = userPath.appendingPathComponent(file)
-        return url
-    }
     
     func loadFromFile() {
-        // get url to the file you want to load from
-        if let data = try? Data(contentsOf: getPath(file: "divisions.json") {
+        let url = FileManager.default.getPath(file: "divisions.json")
+        if let data = try? Data(contentsOf: url) {
             let decoder = JSONDecoder()
             if let loaded = try? decoder.decode([Division].self, from: data) {
                 divisions = loaded
@@ -39,9 +32,10 @@ class StateController: ObservableObject {
             // take encoded objects and convert them into a string
             if let json = String(data: encoded, encoding: .utf8) {
                 // creat the file path
+                let url = FileManager.default.getPath(file: "divisions.json")
                 do {
                     // write the json string to that file
-                    try json.write(to: getPath(file: "divisions.json"), atomically: true, encoding: .utf8)
+                    try json.write(to: url, atomically: true, encoding: .utf8)
                 } catch {
                     print(error.localizedDescription)
                 }

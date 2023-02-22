@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1EA76829A6CA94001F6900 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1EA76729A6CA94001F6900 /* FileManager.swift */; };
 		4F56BDF829886EF000230686 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56BDF729886EF000230686 /* Date.swift */; };
 		4F56BDFA2988732300230686 /* DivisionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56BDF92988732300230686 /* DivisionItem.swift */; };
 		4F56BDFC2989868D00230686 /* AbsenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56BDFB2989868D00230686 /* AbsenceView.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F1EA76729A6CA94001F6900 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		4F56BDF729886EF000230686 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		4F56BDF92988732300230686 /* DivisionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionItem.swift; sourceTree = "<group>"; };
 		4F56BDFB2989868D00230686 /* AbsenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsenceView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				4F56BDF729886EF000230686 /* Date.swift */,
+				4F1EA76729A6CA94001F6900 /* FileManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				4FC8C673297745C400836EEB /* DivisionsView.swift in Sources */,
 				4F56BDF829886EF000230686 /* Date.swift in Sources */,
 				4F56BDFE29899CC800230686 /* RootTabView.swift in Sources */,
+				4F1EA76829A6CA94001F6900 /* FileManager.swift in Sources */,
 				4F666B06298C407400A7F379 /* StudentAbsence.swift in Sources */,
 				4FC8C69D2977481C00836EEB /* Student.swift in Sources */,
 				4F666B04298C3DA200A7F379 /* AbsenceItem.swift in Sources */,
